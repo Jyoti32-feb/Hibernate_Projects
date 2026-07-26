@@ -42,6 +42,7 @@
 
         <!-- Entity Mapping -->
         <mapping class="com.hibernate.demo.entity.Employee"/>
+        <mapping class="com.hibernate.demo.entity.Product"/>
 
     </session-factory>
 </hibernate-configuration>
