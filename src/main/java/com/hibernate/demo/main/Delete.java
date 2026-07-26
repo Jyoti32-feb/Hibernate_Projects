@@ -13,7 +13,7 @@ public class Delete {
         SessionFactory sf = cfg.buildSessionFactory();
         Session session = sf.openSession();
         Transaction tx=session.beginTransaction();
-        Employee employee = session.get(Employee.class, 1);
+        Employee employee = session.get(Employee.class, 4);
         if (employee != null) {
             session.remove(employee);
         }
