@@ -15,13 +15,18 @@ public class Employee {
     @JoinColumn(name = "id_card_id")
     private IDCard idCard;
 
+    @ManyToOne
+    @JoinColumn(name="department_id")
+    private Departments department;
+
     public Employee() {
     }
 
-    public Employee(String name, double salary, IDCard idCard) {
+    public Employee(String name, double salary, IDCard idCard, Departments department) {
         this.name = name;
         this.salary = salary;
         this.idCard = idCard;
+        this.department = department;
     }
     public int getId() {
         return id;
@@ -53,6 +58,12 @@ public class Employee {
 
     public void setIdCard(IDCard idCard) {
         this.idCard = idCard;
+    }
+    public Departments getDepartment() {
+        return department;
+    }
+    public void setDepartment(Departments department) {
+        this.department = department;
     }
 
     @Override

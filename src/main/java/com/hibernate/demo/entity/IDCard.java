@@ -13,11 +13,15 @@ public class IDCard
     @Column(name = "card_number")
     private String cardNumber;
 
+    @OneToOne(mappedBy = "idCard")
+    private Employee employee;
+
     public IDCard() {
     }
 
-    public IDCard(String cardNumber) {
+    public IDCard(String cardNumber,Employee employee) {
         this.cardNumber = cardNumber;
+        this.employee = employee;
     }
 
     public Integer getId() {
@@ -31,12 +35,18 @@ public class IDCard
     public void setCardNumber(String cardNumber) {
         this.cardNumber = cardNumber;
     }
+    public Employee getEmployee() {
+        return employee;
+    }
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
 
     @Override
     public String toString() {
         return "IDCard{" +
                 "id=" + id +
-                ", cardNumber='" + cardNumber + '\'' +
+                ", cardNumber='" + cardNumber + ",employee=" + employee +
                 '}';
     }
 
