@@ -45,6 +45,10 @@
         <mapping class="com.hibernate.demo.entity.Product"/>
         <mapping class="com.hibernate.demo.entity.IDCard"/>
         <mapping class="com.hibernate.demo.entity.Departments"/>
+        <mapping class="com.hibernate.demo.entity.Student"/>
+        <mapping class="com.hibernate.demo.entity.Course"/>
+
+
 
     </session-factory>
 </hibernate-configuration>
