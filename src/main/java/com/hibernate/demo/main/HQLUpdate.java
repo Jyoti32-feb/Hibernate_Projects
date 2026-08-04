@@ -18,5 +18,15 @@ public class HQLUpdate {
         System.out.println("Result :"+result);
         transaction.commit();
         session.close();
+
+        Session session1 = sessionFactory.openSession();
+        Transaction transaction1 = session1.beginTransaction();
+        Query query1=session1.createQuery("update  Employee set salary=:salary where id=:id");
+        query1.setParameter("salary",9000);
+        query1.setParameter("id",1);
+        int result1=query1.executeUpdate();
+        System.out.println("Result :"+result1);
+        transaction1.commit();
+        session1.close();
     }
 }
