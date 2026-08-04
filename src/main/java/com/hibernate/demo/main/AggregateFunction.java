@@ -1,9 +1,13 @@
 package com.hibernate.demo.main;
 
+import com.hibernate.demo.entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
+
+import java.util.List;
 
 public class AggregateFunction {
     public static void main(String[] args) {
@@ -26,6 +30,12 @@ public class AggregateFunction {
 
          double max=session1.createQuery("select max(salary) from Employee ",double.class).getSingleResult();
          System.out.println("max :"+max);
+
+        Query<Employee>query1=session1.createQuery(" from Employee  order by salary desc",Employee.class);
+        List<Employee> employees = query1.list();
+        for(Employee e:employees){
+            System.out.println(e);
+        }
 
 
         transaction1.commit();
