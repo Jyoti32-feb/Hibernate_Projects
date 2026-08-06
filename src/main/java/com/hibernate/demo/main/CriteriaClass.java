@@ -25,6 +25,15 @@ public class CriteriaClass {
 
         cq.select(root);
 
+        cq.where(
+                cb.greaterThan(root.get("salary"), 50000.0)
+        );
+
+        cq.where(
+                cb.equal(root.get("name"), "Jyoti")
+        );
+
+
         List<Employee> employees =
                 session.createQuery(cq).getResultList();
         for (Employee employee : employees) {
